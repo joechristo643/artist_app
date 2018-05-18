@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background: whitesmoke;
+}
+
+#search-div {
+    width: 100%;
+    height: 90px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    padding: 25px;
+    float: inherit;
+    background: lightseagreen
+}
+
+header input {
+    border: none;
+    text-indent: 15px;
+    height: 45px;
+    background: #58e6af;
+    border-radius: 25px;
+    position: relative;
+    width: 100%;
+    top: 0px;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    float: left;
+}
+
+::-webkit-input-placeholder {
+    text-indent: 15px;
+    color: whitesmoke;
+}
+
+header button {
+    cursor: pointer;
+    border-radius: 50%;
+    color: #58e6af;
+    border: 0.5px solid whitesmoke;
+    outline: none;
+    background: white;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    height: 45px;
+    font-size: 25px;
+    width: 45px;
+    z-index: 2;
+}
+
+.artistdiv,
+.artistdiv-select,
+.albumdiv {
+    display: flex;
+}
+
+.artistdiv img,
+.albumdiv img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+    min-height: 400px;
+}
+
+.artists {
+    /* display: none; */
+}
+
+.artists li,
+.albums li {
+    padding: 5px 0px 5px 0px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.artist-name,
+.artist-name-select {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.artist-detail,
+.artist-detail-select,
+.album-detail {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.other-detail:hover,
+.other-detail-album:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#art-container:empty::before {
+    content: 'Search to display an artist';
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.no-artist,
+.no-album,
+.no-track {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+#pagination {
+    width: 100%;
+    height: 40px;
+    display: none;
+    position: fixed;
+    bottom: 0;
+}
+
+#pagination span {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.artistrow:last-of-type,
+.albumrow:last-of-type {
+    margin-bottom: 0px !important;
+}
+
+.artist-img-select {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+}
+
+.artistdiv-select {
+    padding: 10px;
+}
+
+.htext {
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: 500;
+    padding: 15px;
+}
+
+#back-button {
+    left: 15px;
+    display: none;
+}
+
+#modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#close {
+    float: right;
+    cursor: pointer;
+}
+
+#close:hover {
+    transform: scale(1.1);
+    fill: red;
+}
+
+#modal-header {
+    background: gainsboro;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#modal-text {
+    padding: 20px;
+    overflow: auto;
+    height: 100px;
+    background: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#modal-content {
+    position: relative;
+    top: 50%;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#modal-toptext {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+}
+
+.tracks {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    border-bottom: 1px solid rgba(110, 107, 107, 0.1);
+}
+
+.tracks:last-of-type {
+    border: none;
+}
+
+#modal-text:empty::before {
+    content: 'No tracks present';
+    display: flex;
+    justify-content: center;
+}
+
+#loader {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    border: 16px solid #c5c2c2;
+    border-top: 16px solid lightseagreen;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 0 auto;
+    display: none;
+    z-index: 3;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sicon,
+.bicon {
+    margin-top: 5px;
+}
