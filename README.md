@@ -1,1 +1,1 @@
-web app for all searching music collections
+web app for searching all music collections
